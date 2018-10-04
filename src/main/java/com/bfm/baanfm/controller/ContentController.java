@@ -16,7 +16,7 @@ public class ContentController {
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @GetMapping("/key")
-    @PreAuthorize("hasRole('USER')")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public GMKey gmKey(){
         return new GMKey(apiKey);
     }
